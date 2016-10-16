@@ -2,7 +2,8 @@
   <?php
     require_once('connection.php');
 
-    $sql = 'SELECT user.*, status.name, user_type.name as type_name FROM user INNER JOIN status ON status.id = user.status_id INNER JOIN user_type ON user_type.id = user.user_type_id';
+    $sql = 'SELECT user.*, status.name, user_type.name as type_name FROM user INNER JOIN status ON status.id = user.status_id 
+            INNER JOIN user_type ON user_type.id = user.user_type_id';
 
     $statement = $pdo->prepare($sql);
     $statement->execute();
